@@ -68,6 +68,25 @@ export class CarsController {
   }
 
 
+  async deleteCar(id) {
+    try {
+
+      const yes = await Pop.confirm('🤷‍♂️ Do you want to delete the car????')
+
+      if (!yes) {
+        return
+      }
+
+      // 💀 now we can delete the car
+      await carsService.deleteCar(id)
+
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+
+
+
 
 
 

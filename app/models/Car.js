@@ -29,8 +29,15 @@ export class Car {
             </span>
           </p>
           <div class="d-flex align-items-center justify-content-between border-top pt-2">
-            <span class="text-capitalize">${this.creator.name}</span>
-            <img class="rounded seller-picture" src="${this.creator.picture}" alt="${this.creator.name}">
+              
+              <button class="btn btn-danger" 
+                onclick="app.CarsController.deleteCar('${this.id}')"
+              >💀</button>
+          
+              <div>
+                <span class="text-capitalize">${this.creator.name}</span>
+                <img class="rounded seller-picture" src="${this.creator.picture}" alt="${this.creator.name}">
+              </div>
           </div>
         </div>
       </div>

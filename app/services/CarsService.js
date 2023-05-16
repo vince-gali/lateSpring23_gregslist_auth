@@ -3,6 +3,11 @@ import { Car } from "../models/Car.js"
 import { api } from "./AxiosService.js"
 
 class CarsService {
+  async deleteCar(id) {
+    const res = await api.delete(`api/cars/${id}`)
+    console.log('did the car get delorted????', res.data)
+    AppState.cars = AppState.cars.filter(c => c.id != id)
+  }
 
   async getCarsFromApi() {
     const res = await api.get('api/cars')
