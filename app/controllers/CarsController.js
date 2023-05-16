@@ -36,6 +36,7 @@ export class CarsController {
 
     this.getCarsFromApi()
     AppState.on('cars', _drawCars)
+    AppState.on('account', _drawCars)
   }
 
   async getCarsFromApi() {

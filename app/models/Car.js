@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class Car {
   constructor(data) {
     this.id = data.id
@@ -30,9 +32,7 @@ export class Car {
           </p>
           <div class="d-flex align-items-center justify-content-between border-top pt-2">
               
-              <button class="btn btn-danger" 
-                onclick="app.CarsController.deleteCar('${this.id}')"
-              >💀</button>
+              ${this.deleteButtonIfCarIsYours}
           
               <div>
                 <span class="text-capitalize">${this.creator.name}</span>
@@ -44,6 +44,22 @@ export class Car {
     </div>
     `
   }
+
+
+  get deleteButtonIfCarIsYours() {
+    //                                    v 🕺 has Elvis left the building
+    if (this.creatorId != AppState.account?.id) {
+      return ''
+    }
+
+    return /*html*/`
+    <button 
+      class="btn btn-danger" 
+      onclick="app.CarsController.deleteCar('${this.id}')"
+    >💀</button>`
+
+  }
+
 
 
   static CarForm() {
@@ -93,6 +109,8 @@ export class Car {
     </form>
     `
   }
+
+
 
 
 
