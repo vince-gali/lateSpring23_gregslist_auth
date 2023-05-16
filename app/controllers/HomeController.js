@@ -23,6 +23,8 @@ function _drawHome() {
 
 </div>
   `)
+  setHTML('the-place-to-put-the-button', '')
+
 }
 
 function _drawValues() {

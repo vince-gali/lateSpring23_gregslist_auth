@@ -11,6 +11,10 @@ class ObservableAppState extends EventEmitter {
   values = []
   socketData = []
 
+  /** @type {import('./models/Car.js').Car[]} */
+  cars = []
+
+
   // Used to load initial data
   init() {
 

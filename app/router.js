@@ -1,4 +1,5 @@
 import { AboutController } from "./controllers/AboutController.js";
+import { CarsController } from "./controllers/CarsController.js";
 import { HomeController } from "./controllers/HomeController.js";
 
 export const router = [
@@ -9,5 +10,9 @@ export const router = [
   {
     path: '#/about',
     controller: AboutController
+  },
+  {
+    path: '#/cars',
+    controller: CarsController
   }
 ]
